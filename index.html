@@ -29,6 +29,84 @@
       </header>
       <section>
         <h3>test</h3>
+          <div id="listener" width=100% height=400>
+    <embed id="nacl_module" name="vigasocosdl" path="/" src="vigasocosdl.nmf"
+           type="application/x-pnacl" 
+           width=640 height=400 />
+  </div>
+  <p>Status: <code id="status">Loading</code></p>
+
+  <script>
+var pnaclmimetype='application/x-pnacl';
+var soporta_pnacl=(navigator.mimeTypes[pnaclmimetype] !== undefined);
+if (!soporta_pnacl) alert("Se necesita un navegador compatible con Portable Native Client. Prueba con Chrome version 31 o superior y revisa los flags relativos a Native Client en chrome://nacl y chrome://flags");
+
+function onInitFs(fs) {
+	console.log('window.webkitRequestFileSystem ok Opened file system: ' + fs.name) 
+}
+
+function
+errorHandler (source, e)
+{
+  console.log ('window.webkitRequestFileSystem err');
+  e.source = source;
+
+  var msg = '';
+
+  switch (e.code)
+    {
+    case FileError.QUOTA_EXCEEDED_ERR:
+      msg = 'QUOTA_EXCEEDED_ERR';
+      break;
+    case FileError.NOT_FOUND_ERR:
+      msg = 'NOT_FOUND_ERR';
+      break;
+    case FileError.SECURITY_ERR:
+      msg = 'SECURITY_ERR';
+      break;
+    case FileError.INVALID_MODIFICATION_ERR:
+      msg = 'INVALID_MODIFICATION_ERR';
+      break;
+    case FileError.INVALID_STATE_ERR:
+      msg = 'INVALID_STATE_ERR';
+      break;
+    default:
+      msg = 'Unknown Error';
+      break;
+    };
+
+  console.log ('Error ' + msg);
+}
+
+navigator.webkitPersistentStorage.requestQuota(20480 ,
+      function(bytes) {
+	    window.webkitRequestFileSystem(PERSISTENT,bytes,
+		function(fs) { console.log("init fs "+fs.name); } , 
+		function() { console.log("error handler"); }
+		);
+            console.log('Obtenidos ' + bytes + ' bytes para almacenar la partida.');
+      },
+      function(e) { console.log('Fallo al obtener espacio para almacenar la partida'); 
+ });
+
+listenerDiv = document.getElementById("listener")
+nacl_module = document.getElementById("nacl_module")
+
+function updateStatus(message) {
+  document.getElementById("status").innerHTML = message
+}
+
+function handleCrash(event) {
+  updateStatus("Crashed/exited with status: " + nacl_module.exitStatus)
+}
+
+function handleLoad(event) {
+  updateStatus("Loaded")
+}
+
+listenerDiv.addEventListener("load", handleLoad, true);
+listenerDiv.addEventListener("crash", handleCrash, true);
+  </script>
       </section>
       <section>
         <h3>
