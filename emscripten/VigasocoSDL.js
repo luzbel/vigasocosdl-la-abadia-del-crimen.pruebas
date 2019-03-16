@@ -195,7 +195,7 @@ Module['FS_createPath']('/roms', 'abadia', true, true);
   }
 
  }
- loadPackage({"files": [{"start": 0, "audio": 0, "end": 174065, "filename": "/roms/abadia/GraficosCPC"}, {"start": 174065, "audio": 0, "end": 348130, "filename": "/roms/abadia/GraficosVGA"}, {"start": 348130, "audio": 0, "end": 508898, "filename": "/roms/abadia/abadia.dsk"}], "remote_package_size": 508898, "package_uuid": "2d0a53d1-24e6-4a45-afce-c751922e7484"});
+ loadPackage({"files": [{"start": 0, "audio": 0, "end": 174065, "filename": "/roms/abadia/GraficosCPC"}, {"start": 174065, "audio": 0, "end": 348130, "filename": "/roms/abadia/GraficosVGA"}, {"start": 348130, "audio": 0, "end": 508898, "filename": "/roms/abadia/abadia.dsk"}], "remote_package_size": 508898, "package_uuid": "00eb86a3-7e06-42a9-82c2-1148935e5b4c"});
 
 })();
 
@@ -1316,11 +1316,11 @@ function updateGlobalBufferViews() {
 if (!ENVIRONMENT_IS_PTHREAD) { // Pthreads have already initialized these variables in src/worker.js, where they were passed to the thread worker at startup time
 
 var STATIC_BASE = 1024,
-    STACK_BASE = 132272,
+    STACK_BASE = 132368,
     STACKTOP = STACK_BASE,
-    STACK_MAX = 5375152,
-    DYNAMIC_BASE = 5375152,
-    DYNAMICTOP_PTR = 131216;
+    STACK_MAX = 5375248,
+    DYNAMIC_BASE = 5375248,
+    DYNAMICTOP_PTR = 131312;
 
 assert(STACK_BASE % 16 === 0, 'stack must start aligned');
 assert(DYNAMIC_BASE % 16 === 0, 'heap must start aligned');
@@ -1818,7 +1818,7 @@ function _emscripten_asm_const_ii(code, a0) {
 
 
 
-// STATICTOP = STATIC_BASE + 131248;
+// STATICTOP = STATIC_BASE + 131344;
 /* global initializers */ if (!ENVIRONMENT_IS_PTHREAD) __ATINIT__.push({ func: function() { globalCtors() } });
 
 
@@ -1832,7 +1832,7 @@ memoryInitializer = "VigasocoSDL.html.mem";
 
 /* no memory initializer */
 var tempDoublePtr;
-if (!ENVIRONMENT_IS_PTHREAD) tempDoublePtr = 132256;
+if (!ENVIRONMENT_IS_PTHREAD) tempDoublePtr = 132352;
 assert(tempDoublePtr % 8 == 0);
 
 function copyTempFloat(ptr) { // functions, because inlining this code increases code size too much
@@ -3119,11 +3119,11 @@ function copyTempDouble(ptr) {
   
   var ERRNO_CODES={EPERM:1,ENOENT:2,ESRCH:3,EINTR:4,EIO:5,ENXIO:6,E2BIG:7,ENOEXEC:8,EBADF:9,ECHILD:10,EAGAIN:11,EWOULDBLOCK:11,ENOMEM:12,EACCES:13,EFAULT:14,ENOTBLK:15,EBUSY:16,EEXIST:17,EXDEV:18,ENODEV:19,ENOTDIR:20,EISDIR:21,EINVAL:22,ENFILE:23,EMFILE:24,ENOTTY:25,ETXTBSY:26,EFBIG:27,ENOSPC:28,ESPIPE:29,EROFS:30,EMLINK:31,EPIPE:32,EDOM:33,ERANGE:34,ENOMSG:42,EIDRM:43,ECHRNG:44,EL2NSYNC:45,EL3HLT:46,EL3RST:47,ELNRNG:48,EUNATCH:49,ENOCSI:50,EL2HLT:51,EDEADLK:35,ENOLCK:37,EBADE:52,EBADR:53,EXFULL:54,ENOANO:55,EBADRQC:56,EBADSLT:57,EDEADLOCK:35,EBFONT:59,ENOSTR:60,ENODATA:61,ETIME:62,ENOSR:63,ENONET:64,ENOPKG:65,EREMOTE:66,ENOLINK:67,EADV:68,ESRMNT:69,ECOMM:70,EPROTO:71,EMULTIHOP:72,EDOTDOT:73,EBADMSG:74,ENOTUNIQ:76,EBADFD:77,EREMCHG:78,ELIBACC:79,ELIBBAD:80,ELIBSCN:81,ELIBMAX:82,ELIBEXEC:83,ENOSYS:38,ENOTEMPTY:39,ENAMETOOLONG:36,ELOOP:40,EOPNOTSUPP:95,EPFNOSUPPORT:96,ECONNRESET:104,ENOBUFS:105,EAFNOSUPPORT:97,EPROTOTYPE:91,ENOTSOCK:88,ENOPROTOOPT:92,ESHUTDOWN:108,ECONNREFUSED:111,EADDRINUSE:98,ECONNABORTED:103,ENETUNREACH:101,ENETDOWN:100,ETIMEDOUT:110,EHOSTDOWN:112,EHOSTUNREACH:113,EINPROGRESS:115,EALREADY:114,EDESTADDRREQ:89,EMSGSIZE:90,EPROTONOSUPPORT:93,ESOCKTNOSUPPORT:94,EADDRNOTAVAIL:99,ENETRESET:102,EISCONN:106,ENOTCONN:107,ETOOMANYREFS:109,EUSERS:87,EDQUOT:122,ESTALE:116,ENOTSUP:95,ENOMEDIUM:123,EILSEQ:84,EOVERFLOW:75,ECANCELED:125,ENOTRECOVERABLE:131,EOWNERDEAD:130,ESTRPIPE:86};
   
-  var _stdin; if (ENVIRONMENT_IS_PTHREAD) _stdin = PthreadWorkerInit._stdin; else PthreadWorkerInit._stdin = _stdin = 131232;
+  var _stdin; if (ENVIRONMENT_IS_PTHREAD) _stdin = PthreadWorkerInit._stdin; else PthreadWorkerInit._stdin = _stdin = 131328;
   
-  var _stdout; if (ENVIRONMENT_IS_PTHREAD) _stdout = PthreadWorkerInit._stdout; else PthreadWorkerInit._stdout = _stdout = 131248;
+  var _stdout; if (ENVIRONMENT_IS_PTHREAD) _stdout = PthreadWorkerInit._stdout; else PthreadWorkerInit._stdout = _stdout = 131344;
   
-  var _stderr; if (ENVIRONMENT_IS_PTHREAD) _stderr = PthreadWorkerInit._stderr; else PthreadWorkerInit._stderr = _stderr = 131264;var FS={root:null,mounts:[],devices:{},streams:[],nextInode:1,nameTable:null,currentPath:"/",initialized:false,ignorePermissions:true,trackingDelegate:{},tracking:{openFlags:{READ:1,WRITE:2}},ErrnoError:null,genericErrors:{},filesystems:null,syncFSRequests:0,handleFSError:function (e) {
+  var _stderr; if (ENVIRONMENT_IS_PTHREAD) _stderr = PthreadWorkerInit._stderr; else PthreadWorkerInit._stderr = _stderr = 131360;var FS={root:null,mounts:[],devices:{},streams:[],nextInode:1,nameTable:null,currentPath:"/",initialized:false,ignorePermissions:true,trackingDelegate:{},tracking:{openFlags:{READ:1,WRITE:2}},ErrnoError:null,genericErrors:{},filesystems:null,syncFSRequests:0,handleFSError:function (e) {
         if (!(e instanceof FS.ErrnoError)) throw e + ' : ' + stackTrace();
         return ___setErrNo(e.errno);
       },lookupPath:function (path, opts) {
@@ -5670,7 +5670,7 @@ function copyTempDouble(ptr) {
       }
   
       return 0;
-    }var SDL={defaults:{width:320,height:200,copyOnLock:true,discardOnLock:false,opaqueFrontBuffer:true},version:null,surfaces:{},canvasPool:[],events:[],fonts:[null],audios:[null],rwops:[null],music:{audio:null,volume:1},mixerFrequency:22050,mixerFormat:32784,mixerNumChannels:2,mixerChunkSize:1024,channelMinimumNumber:0,GL:false,glAttributes:{0:3,1:3,2:2,3:0,4:0,5:1,6:16,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:1,16:0,17:0,18:0},keyboardState:null,keyboardMap:{},canRequestFullscreen:false,isRequestingFullscreen:false,textInput:false,startTime:null,initFlags:0,buttonState:0,modState:0,DOMButtons:[0,0,0],DOMEventToSDLEvent:{},TOUCH_DEFAULT_ID:0,eventHandler:null,eventHandlerContext:null,eventHandlerTemp:0,keyCodes:{16:1249,17:1248,18:1250,20:1081,33:1099,34:1102,35:1101,36:1098,37:1104,38:1106,39:1103,40:1105,44:316,45:1097,46:127,91:1251,93:1125,96:1122,97:1113,98:1114,99:1115,100:1116,101:1117,102:1118,103:1119,104:1120,105:1121,106:1109,107:1111,109:1110,110:1123,111:1108,112:1082,113:1083,114:1084,115:1085,116:1086,117:1087,118:1088,119:1089,120:1090,121:1091,122:1092,123:1093,124:1128,125:1129,126:1130,127:1131,128:1132,129:1133,130:1134,131:1135,132:1136,133:1137,134:1138,135:1139,144:1107,160:94,161:33,162:34,163:35,164:36,165:37,166:38,167:95,168:40,169:41,170:42,171:43,172:124,173:45,174:123,175:125,176:126,181:127,182:129,183:128,188:44,190:46,191:47,192:96,219:91,220:92,221:93,222:39,224:1251},scanCodes:{8:42,9:43,13:40,27:41,32:44,35:204,39:53,44:54,46:55,47:56,48:39,49:30,50:31,51:32,52:33,53:34,54:35,55:36,56:37,57:38,58:203,59:51,61:46,91:47,92:49,93:48,96:52,97:4,98:5,99:6,100:7,101:8,102:9,103:10,104:11,105:12,106:13,107:14,108:15,109:16,110:17,111:18,112:19,113:20,114:21,115:22,116:23,117:24,118:25,119:26,120:27,121:28,122:29,127:76,305:224,308:226,316:70},loadRect:function (rect) {
+    }var SDL={defaults:{width:320,height:200,copyOnLock:false,discardOnLock:true,opaqueFrontBuffer:false},version:null,surfaces:{},canvasPool:[],events:[],fonts:[null],audios:[null],rwops:[null],music:{audio:null,volume:1},mixerFrequency:22050,mixerFormat:32784,mixerNumChannels:2,mixerChunkSize:1024,channelMinimumNumber:0,GL:false,glAttributes:{0:3,1:3,2:2,3:0,4:0,5:1,6:16,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:1,16:0,17:0,18:0},keyboardState:null,keyboardMap:{},canRequestFullscreen:false,isRequestingFullscreen:false,textInput:false,startTime:null,initFlags:0,buttonState:0,modState:0,DOMButtons:[0,0,0],DOMEventToSDLEvent:{},TOUCH_DEFAULT_ID:0,eventHandler:null,eventHandlerContext:null,eventHandlerTemp:0,keyCodes:{16:1249,17:1248,18:1250,20:1081,33:1099,34:1102,35:1101,36:1098,37:1104,38:1106,39:1103,40:1105,44:316,45:1097,46:127,91:1251,93:1125,96:1122,97:1113,98:1114,99:1115,100:1116,101:1117,102:1118,103:1119,104:1120,105:1121,106:1109,107:1111,109:1110,110:1123,111:1108,112:1082,113:1083,114:1084,115:1085,116:1086,117:1087,118:1088,119:1089,120:1090,121:1091,122:1092,123:1093,124:1128,125:1129,126:1130,127:1131,128:1132,129:1133,130:1134,131:1135,132:1136,133:1137,134:1138,135:1139,144:1107,160:94,161:33,162:34,163:35,164:36,165:37,166:38,167:95,168:40,169:41,170:42,171:43,172:124,173:45,174:123,175:125,176:126,181:127,182:129,183:128,188:44,190:46,191:47,192:96,219:91,220:92,221:93,222:39,224:1251},scanCodes:{8:42,9:43,13:40,27:41,32:44,35:204,39:53,44:54,46:55,47:56,48:39,49:30,50:31,51:32,52:33,53:34,54:35,55:36,56:37,57:38,58:203,59:51,61:46,91:47,92:49,93:48,96:52,97:4,98:5,99:6,100:7,101:8,102:9,103:10,104:11,105:12,106:13,107:14,108:15,109:16,110:17,111:18,112:19,113:20,114:21,115:22,116:23,117:24,118:25,119:26,120:27,121:28,122:29,127:76,305:224,308:226,316:70},loadRect:function (rect) {
         return {
           x: HEAP32[((rect + 0)>>2)],
           y: HEAP32[((rect + 4)>>2)],
@@ -7143,7 +7143,7 @@ function copyTempDouble(ptr) {
   
   var __pthread_is_main_browser_thread=0; var PThread={MAIN_THREAD_ID:1,mainThreadInfo:{schedPolicy:0,schedPrio:0},unusedWorkerPool:[],runningWorkers:[],initMainThreadBlock:function () {
         if (ENVIRONMENT_IS_PTHREAD) return undefined;
-        PThread.mainThreadBlock = 131456;
+        PThread.mainThreadBlock = 131552;
   
         for (var i = 0; i < 244/4; ++i) HEAPU32[PThread.mainThreadBlock/4+i] = 0;
   
@@ -7156,7 +7156,7 @@ function copyTempDouble(ptr) {
         HEAP32[((headPtr)>>2)]=headPtr;
   
         // Allocate memory for thread-local storage.
-        var tlsMemory = 131712;
+        var tlsMemory = 131808;
         for (var i = 0; i < 128; ++i) HEAPU32[tlsMemory/4+i] = 0;
         Atomics.store(HEAPU32, (PThread.mainThreadBlock + 116 ) >> 2, tlsMemory); // Init thread-local-storage memory array.
         Atomics.store(HEAPU32, (PThread.mainThreadBlock + 52 ) >> 2, PThread.mainThreadBlock); // Main thread ID.
@@ -7910,7 +7910,7 @@ function copyTempDouble(ptr) {
     } 
 
   
-  var __main_thread_futex_wait_address; if (ENVIRONMENT_IS_PTHREAD) __main_thread_futex_wait_address = PthreadWorkerInit.__main_thread_futex_wait_address; else PthreadWorkerInit.__main_thread_futex_wait_address = __main_thread_futex_wait_address = 132240;function _emscripten_futex_wait(addr, val, timeout) {
+  var __main_thread_futex_wait_address; if (ENVIRONMENT_IS_PTHREAD) __main_thread_futex_wait_address = PthreadWorkerInit.__main_thread_futex_wait_address; else PthreadWorkerInit.__main_thread_futex_wait_address = __main_thread_futex_wait_address = 132336;function _emscripten_futex_wait(addr, val, timeout) {
       if (addr <= 0 || addr > HEAP8.length || addr&3 != 0) return -22;
   //    dump('futex_wait addr:' + addr + ' by thread: ' + _pthread_self() + (ENVIRONMENT_IS_PTHREAD?'(pthread)':'') + '\n');
       if (ENVIRONMENT_IS_WORKER) {
@@ -8984,7 +8984,7 @@ function copyTempDouble(ptr) {
       return _strftime(s, maxsize, format, tm); // no locale support yet
     }
 
-  var ___dso_handle; if (ENVIRONMENT_IS_PTHREAD) ___dso_handle = PthreadWorkerInit.___dso_handle; else PthreadWorkerInit.___dso_handle = ___dso_handle = 131296;
+  var ___dso_handle; if (ENVIRONMENT_IS_PTHREAD) ___dso_handle = PthreadWorkerInit.___dso_handle; else PthreadWorkerInit.___dso_handle = ___dso_handle = 131392;
 
 FS.staticInit();Module["FS_createFolder"] = FS.createFolder;Module["FS_createPath"] = FS.createPath;Module["FS_createDataFile"] = FS.createDataFile;Module["FS_createPreloadedFile"] = FS.createPreloadedFile;Module["FS_createLazyFile"] = FS.createLazyFile;Module["FS_createLink"] = FS.createLink;Module["FS_createDevice"] = FS.createDevice;Module["FS_unlink"] = FS.unlink;;
 if (ENVIRONMENT_IS_NODE) { var fs = require("fs"); var NODEJS_PATH = require("path"); NODEFS.staticInit(); };
