@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Emscripten-Generated Code</title>
+    <script src="./coi-serviceworker.js"></script>
     <style>
       body {
         font-family: arial;
@@ -1203,6 +1204,13 @@
   <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
   <span><input type="button" value="Fullscreen" onclick="Module.requestFullscreen(document.getElementById('pointerLock').checked, 
                                                                             document.getElementById('resize').checked)">
+  </span>
+  <span>
+    <script>
+        const el = document.createElement("div")
+        el.innerHTML = `Cross origin isolated: ${window.crossOriginIsolated ? "✅" : "❌"}`
+        document.body.append(el);
+    </script>
   </span>
 </span>
 
