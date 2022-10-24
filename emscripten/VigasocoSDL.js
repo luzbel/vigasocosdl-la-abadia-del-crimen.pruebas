@@ -7965,9 +7965,9 @@ function copyTempDouble(ptr) {
       }
   
       // Wake any workers waiting on this address.
-      var ret = Atomics.wake(HEAP32, addr >> 2, count);
+      var ret = Atomics.notify(HEAP32, addr >> 2, count);
       if (ret >= 0) return ret + mainThreadWoken;
-      throw 'Atomics.wake returned an unexpected value ' + ret;
+      throw 'Atomics.notify returned an unexpected value ' + ret;
     }
 
   function _emscripten_get_heap_size() {
