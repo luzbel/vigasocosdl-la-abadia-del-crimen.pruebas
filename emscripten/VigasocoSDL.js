@@ -83,7 +83,7 @@ if (ENVIRONMENT_IS_NODE) {
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: /tmp/tmpykg9tzzg.js
+// include: /tmp/tmpuecz7uqk.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -102,7 +102,7 @@ if (ENVIRONMENT_IS_NODE) {
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = 'VigasocoSDL.data';
+      var PACKAGE_NAME = 'emscripten/VigasocoSDL.data';
       var REMOTE_PACKAGE_BASE = 'VigasocoSDL.data';
       var REMOTE_PACKAGE_NAME = Module['locateFile']?.(REMOTE_PACKAGE_BASE, '') ?? REMOTE_PACKAGE_BASE;
       var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
@@ -193,9 +193,9 @@ Module['FS_createPath']("/roms", "abadia", true, true);
           Module['FS_createDataFile'](name, null, data, true, true, true);
           Module['removeRunDependency'](`fp ${name}`);
           }
-          Module['removeRunDependency']('datafile_VigasocoSDL.data');
+          Module['removeRunDependency']('datafile_emscripten/VigasocoSDL.data');
       }
-      Module['addRunDependency']('datafile_VigasocoSDL.data');
+      Module['addRunDependency']('datafile_emscripten/VigasocoSDL.data');
 
       Module['preloadResults'] ??= {};
 
@@ -217,14 +217,14 @@ Module['FS_createPath']("/roms", "abadia", true, true);
 
   })();
 
-// end include: /tmp/tmpykg9tzzg.js
-// include: /tmp/tmpk33in8og.js
+// end include: /tmp/tmpuecz7uqk.js
+// include: /tmp/tmp9i_7ojs4.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: /tmp/tmpk33in8og.js
+  // end include: /tmp/tmp9i_7ojs4.js
 // include: pre.js
 Module["preRun"].push(function () {
     addRunDependency('syncfs')
@@ -273,13 +273,13 @@ if (globalThis.window) {
   }
 }
 // end include: /home/VigasocoSDL/emsdk/upstream/emscripten/src/emrun_prejs.js
-// include: /tmp/tmpxn3cvjal.js
+// include: /tmp/tmp3g0ymg9c.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: /tmp/tmpxn3cvjal.js
+  // end include: /tmp/tmp3g0ymg9c.js
 
 
 var arguments_ = [];
